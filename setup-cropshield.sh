@@ -1,5 +1,6 @@
 #!/bin/bash
 
+clear
 #Bienvenida 
 
 echo " #####                        #####                                    "
@@ -29,6 +30,7 @@ send_yes() {
 }
 
 # Crear el directorio 'projects' y cambiar al directorio
+cd
 mkdir projects
 cd projects
 
@@ -56,8 +58,9 @@ pip install -r requirements.txt
 
 send_yes | sudo apt install nginx
 
+clear
 # Crear Archivo de configuracion NginX
-
+echo "***********************************************"
 echo "Por favor, ingresa la dirección IP del droplet:"
 read direccion_ip
 
@@ -78,7 +81,7 @@ echo "$configuracion" | sudo tee /etc/nginx/sites-available/cropshield-api
 # Reiniciar Nginx para que los cambios surtan efecto
 sudo service nginx restart
 
-echo "La dirección IP del droplet se ha agregado correctamente en /etc/nginx/sites-available/cropshield-api."
+echo "La dirección IP del droplet se ha agregado correctamente en /etc/nginx/sites-available/cropshield-api"
 
 sudo ln -s /etc/nginx/sites-available/cropshield-api /etc/nginx/sites-enabled
 
@@ -111,5 +114,11 @@ echo "El archivo /etc/systemd/system/cropshield.service se ha creado correctamen
 
 sudo systemctl start cropshield
 
+clear
+
 # Mostrar un mensaje al finalizar
+echo "***********************************************************"
+echo "                                                           "
 echo "El entorno de desarrollo ha sido configurado correctamente."
+echo "                                                           "
+echo "***********************************************************"
