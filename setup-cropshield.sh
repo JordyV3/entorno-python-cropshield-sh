@@ -8,6 +8,7 @@ send_yes() {
 }
 
 # Crear el directorio 'projects' y cambiar al directorio
+cd
 mkdir -p projects
 cd projects
 
@@ -22,10 +23,12 @@ send_yes | sudo apt update
 send_yes | sudo apt install -y python3-pip python3-dev python3-setuptools python3-venv
 
 # Crear y activar el entorno virtual
+cd ..
 python3 -m venv env
 source env/bin/activate
 
 # Instalar las dependencias del proyecto
+cd cropshield-api-ia/
 send_yes | pip install --upgrade pip
 pip install -r requirements.txt
 
