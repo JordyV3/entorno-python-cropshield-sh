@@ -114,7 +114,18 @@ echo "El archivo /etc/systemd/system/cropshield.service se ha creado correctamen
 
 sudo systemctl start cropshield
 
+cd
+
 clear
+
+sudo add-apt-respository ppa:certbot/certbot
+
+read
+
+sudo apt update
+
+send_yes | sudo apt install python-certbot-nginx
+
 
 # Mostrar un mensaje al finalizar
 echo "***********************************************************"
