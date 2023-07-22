@@ -118,14 +118,6 @@ cd
 
 clear
 
-sudo add-apt-respository ppa:certbot/certbot
-
-read
-
-sudo apt update
-
-send_yes | sudo apt install python-certbot-nginx
-
 
 # Mostrar un mensaje al finalizar
 echo "***********************************************************"
